@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import Homeview
+from .views import Homeview, DeleteCityView
 
 urlpatterns = [
-    path('', Homeview),
+    path('', Homeview, name='home'),
+    path('delete/<str:city_name>/', DeleteCityView, name='delete'),
 ]
