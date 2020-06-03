@@ -79,6 +79,12 @@ WSGI_APPLICATION = 'TheWeather.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    }
+}
+
 DATABASES['default'] = dj_database_url.config(default='postgres://lkxsraymzakldp:bc72b55cdf0e6eef072a3a0352859b361b7311551bd68876b167fae4ac1e25d2@ec2-54-86-170-8.compute-1.amazonaws.com:5432/d3mnt0f95253ne')
 
 db_from_env = dj_database_url.config(conn_max_age=600)
