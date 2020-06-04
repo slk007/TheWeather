@@ -2,11 +2,14 @@ from django.shortcuts import render, redirect
 import requests
 from .models import City
 from .forms import CityForm
+from decouple import config
+
+APPID = config('APPID')
 
 # Create your views here.
 def Homeview(request):
 
-    url = "http://api.openweathermap.org/data/2.5/weather?q={}&APPID=ae051d120236e4e4bb59ebda98f367df"
+    url = "http://api.openweathermap.org/data/2.5/weather?q={}&APPID="+APPID
 
     error_message = ''
     message = ''
